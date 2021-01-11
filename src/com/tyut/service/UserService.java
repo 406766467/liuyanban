@@ -1,4 +1,12 @@
 package com.tyut.service;
 
-public class UserService {
+import com.tyut.po.User;
+
+import java.util.List;
+
+public interface UserService {
+    List<User> findAllUser();
+    int updateUserType(Integer id);
+    int updateStatus(Integer id);
+
 }

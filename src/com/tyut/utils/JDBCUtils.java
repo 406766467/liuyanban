@@ -13,7 +13,6 @@ import java.util.Properties;
  * JDBC工具类 使用Durid连接池
  */
 public class JDBCUtils {
-
     private static DataSource ds ;
 
     static {
