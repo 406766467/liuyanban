@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,9 +18,9 @@
     <!-- Bootstrap core CSS -->
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!--external css-->
-    <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="css/zabuto_calendar.css">
-    <link rel="stylesheet" type="text/css" href="lib/gritter/css/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="lib/gritter/css/jquery.gritter.css"/>
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet">
@@ -64,18 +65,20 @@
         <div id="sidebar" class="nav-collapse ">
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
-                <li class="mt">
-                    <a class="active" href="/findAllMessageServlet">
-                        <i class="fa fa-dashboard"></i>
-                        <span>留言管理</span>
-                    </a>
-                </li>
-                <li class="sub-menu">
-                    <a href="/findAllUserServlet">
-                        <i class="fa fa-desktop"></i>
-                        <span>用户管理</span>
-                    </a>
-                </li>
+                <c:if test="${user.status == 1}">
+                    <li class="mt">
+                        <a class="active" href="/findAllMessageServlet">
+                            <i class="fa fa-dashboard"></i>
+                            <span>留言管理</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="/findAllUserServlet">
+                            <i class="fa fa-desktop"></i>
+                            <span>用户管理</span>
+                        </a>
+                    </li>
+                </c:if>
                 <li class="sub-menu">
                     <a href="/findAllMyMessageByIdServlet">
                         <i class="fa fa-desktop"></i>
@@ -110,31 +113,45 @@
                         </ul>
                         <div class="bar">
                             <div class="title">JAN</div>
-                            <div class="value tooltips" data-original-title="8.500" data-toggle="tooltip" data-placement="top">85%</div>
+                            <div class="value tooltips" data-original-title="8.500" data-toggle="tooltip"
+                                 data-placement="top">85%
+                            </div>
                         </div>
                         <div class="bar ">
                             <div class="title">FEB</div>
-                            <div class="value tooltips" data-original-title="5.000" data-toggle="tooltip" data-placement="top">50%</div>
+                            <div class="value tooltips" data-original-title="5.000" data-toggle="tooltip"
+                                 data-placement="top">50%
+                            </div>
                         </div>
                         <div class="bar ">
                             <div class="title">MAR</div>
-                            <div class="value tooltips" data-original-title="6.000" data-toggle="tooltip" data-placement="top">60%</div>
+                            <div class="value tooltips" data-original-title="6.000" data-toggle="tooltip"
+                                 data-placement="top">60%
+                            </div>
                         </div>
                         <div class="bar ">
                             <div class="title">APR</div>
-                            <div class="value tooltips" data-original-title="4.500" data-toggle="tooltip" data-placement="top">45%</div>
+                            <div class="value tooltips" data-original-title="4.500" data-toggle="tooltip"
+                                 data-placement="top">45%
+                            </div>
                         </div>
                         <div class="bar">
                             <div class="title">MAY</div>
-                            <div class="value tooltips" data-original-title="3.200" data-toggle="tooltip" data-placement="top">32%</div>
+                            <div class="value tooltips" data-original-title="3.200" data-toggle="tooltip"
+                                 data-placement="top">32%
+                            </div>
                         </div>
                         <div class="bar ">
                             <div class="title">JUN</div>
-                            <div class="value tooltips" data-original-title="6.200" data-toggle="tooltip" data-placement="top">62%</div>
+                            <div class="value tooltips" data-original-title="6.200" data-toggle="tooltip"
+                                 data-placement="top">62%
+                            </div>
                         </div>
                         <div class="bar">
                             <div class="title">JUL</div>
-                            <div class="value tooltips" data-original-title="7.500" data-toggle="tooltip" data-placement="top">75%</div>
+                            <div class="value tooltips" data-original-title="7.500" data-toggle="tooltip"
+                                 data-placement="top">75%
+                            </div>
                         </div>
                     </div>
                     <!--custom chart end-->
@@ -208,7 +225,11 @@
                                     <h5>REVENUE</h5>
                                 </div>
                                 <div class="chart mt">
-                                    <div class="sparkline" data-type="line" data-resize="true" data-height="75" data-width="90%" data-line-width="1" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="4" data-data="[200,135,667,333,526,996,564,123,890,464,655]"></div>
+                                    <div class="sparkline" data-type="line" data-resize="true" data-height="75"
+                                         data-width="90%" data-line-width="1" data-line-color="#fff"
+                                         data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
+                                         data-spot-radius="4"
+                                         data-data="[200,135,667,333,526,996,564,123,890,464,655]"></div>
                                 </div>
                                 <p class="mt"><b>$ 17,980</b><br/>Month Income</p>
                             </div>
@@ -242,10 +263,13 @@
                                             sent you a message.
                                         </p>
                                         <p class="small">3 hours ago</p>
-                                        <p class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                        <p class="message">Lorem Ipsum is simply dummy text of the printing and
+                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                                            text ever since the 1500s.</p>
                                         <form class="form-inline" role="form">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="exampleInputText" placeholder="Reply Dan">
+                                                <input type="text" class="form-control" id="exampleInputText"
+                                                       placeholder="Reply Dan">
                                             </div>
                                             <button type="submit" class="btn btn-default">Send</button>
                                         </form>
@@ -384,7 +408,10 @@
                                     <strong>$ 890,00 | 15%</strong>
                                 </div>
                                 <br>
-                                <div class="sparkline" data-type="line" data-resize="true" data-height="75" data-width="90%" data-line-width="1" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="4" data-data="[200,135,667,333,526,996,564,123,890,564,455]"></div>
+                                <div class="sparkline" data-type="line" data-resize="true" data-height="75"
+                                     data-width="90%" data-line-width="1" data-line-color="#fff" data-spot-color="#fff"
+                                     data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="4"
+                                     data-data="[200,135,667,333,526,996,564,123,890,564,455]"></div>
                             </div>
                         </div>
                     </div>
@@ -497,7 +524,8 @@
                     <div id="calendar" class="mb">
                         <div class="panel green-panel no-margin">
                             <div class="panel-body">
-                                <div id="date-popover" class="popover top" style="cursor: pointer; disadding: block; margin-left: 33%; margin-top: -50px; width: 175px;">
+                                <div id="date-popover" class="popover top"
+                                     style="cursor: pointer; disadding: block; margin-left: 33%; margin-top: -50px; width: 175px;">
                                     <div class="arrow"></div>
                                     <h3 class="popover-title" style="disadding: none;"></h3>
                                     <div id="date-popover-content" class="popover-content"></div>
@@ -552,7 +580,7 @@
 <script src="lib/sparkline-chart.js"></script>
 <script src="lib/zabuto_calendar.js"></script>
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
         var unique_id = $.gritter.add({
             // (string | mandatory) the heading of the notification
             title: 'Welcome to Dashio!',
@@ -572,21 +600,21 @@
     });
 </script>
 <script type="application/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
         $("#date-popover").popover({
             html: true,
             trigger: "manual"
         });
         $("#date-popover").hide();
-        $("#date-popover").click(function(e) {
+        $("#date-popover").click(function (e) {
             $(this).hide();
         });
 
         $("#my-calendar").zabuto_calendar({
-            action: function() {
+            action: function () {
                 return myDateFunction(this.id, false);
             },
-            action_nav: function() {
+            action_nav: function () {
                 return myNavFunction(this.id);
             },
             ajax: {

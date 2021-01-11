@@ -18,7 +18,7 @@
     <!-- Bootstrap core CSS -->
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!--external css-->
-    <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet"/>
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet">
@@ -63,19 +63,21 @@
         <div id="sidebar" class="nav-collapse ">
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
-                <li class="mt">
-                    <a  href="/findAllMessageServlet">
-                        <i class="fa fa-dashboard"></i>
-                        <span>留言管理</span>
-                    </a>
-                </li>
-                <li class="sub-menu">
+                <c:if test="${user.status == 1}">
+                    <li class="mt">
+                        <a href="/findAllMessageServlet">
+                            <i class="fa fa-dashboard"></i>
+                            <span>留言管理</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
 
-                    <a class="active" href="/findAllUserServlet">
-                        <i class="fa fa-desktop"></i>
-                        <span>用户管理</span>
-                    </a>
-                </li>
+                        <a class="active" href="/findAllUserServlet">
+                            <i class="fa fa-desktop"></i>
+                            <span>用户管理</span>
+                        </a>
+                    </li>
+                </c:if>
                 <li class="sub-menu">
                     <a href="/findAllMyMessageByIdServlet">
                         <i class="fa fa-desktop"></i>
@@ -96,44 +98,44 @@
             <h3><i class="fa fa-angle-right"></i> 用户管理</h3>
             <div class="row">
 
-            <!-- row -->
-            <div class="row mt">
-                <div class="col-md-12">
-                    <div class="content-panel">
-                        <table class="table table-striped table-advance table-hover">
+                <!-- row -->
+                <div class="row mt">
+                    <div class="col-md-12">
+                        <div class="content-panel">
+                            <table class="table table-striped table-advance table-hover">
 
-                            <hr>
-                            <thead>
-                            <tr>
-                                <th><i class="fa fa-bullhorn"></i> 用户名</th>
-                                <th><i class="fa fa-edit"></i> 功能</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-
-                            <c:forEach items="${users}" var="user" varStatus="s">
+                                <hr>
+                                <thead>
                                 <tr>
-                                    <td>
-                                         ${user.username}
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-success  btn-sm"
-                                           href="/updateUserTypeServlet?id=${user.uid}"><i
-                                                class="fa fa-trash-o "></i>修改身份</a>
-                                        <a class="btn btn-warning btn-sm"
-                                           href="/updateStatusServlet?id=${user.uid}"><i
-                                                class="fa fa-pencil "></i>修改禁言</a>
-                                    </td>
+                                    <th><i class="fa fa-bullhorn"></i> 用户名</th>
+                                    <th><i class="fa fa-edit"></i> 功能</th>
                                 </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+
+                                <c:forEach items="${users}" var="user" varStatus="s">
+                                    <tr>
+                                        <td>
+                                                ${user.username}
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-success  btn-sm"
+                                               href="/updateUserTypeServlet?id=${user.uid}"><i
+                                                    class="fa fa-trash-o "></i>修改身份</a>
+                                            <a class="btn btn-warning btn-sm"
+                                               href="/updateStatusServlet?id=${user.uid}"><i
+                                                    class="fa fa-pencil "></i>修改禁言</a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /content-panel -->
                     </div>
-                    <!-- /content-panel -->
+                    <!-- /col-md-12 -->
                 </div>
-                <!-- /col-md-12 -->
-            </div>
-            <!-- /row -->
+                <!-- /row -->
         </section>
     </section>
     <!-- /MAIN CONTENT -->

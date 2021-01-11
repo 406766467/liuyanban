@@ -15,6 +15,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User findUserById(Integer id) {
+        return userDao.findUserById(id);
+    }
+
+    @Override
     public int updateUserType(Integer id) {
         User user = userDao.findUserById(id);
         int result = 0;
@@ -36,6 +41,11 @@ public class UserServiceImpl implements UserService {
             result = userDao.updateStatus(id,1);
         }
         return result;
+    }
+
+    @Override
+    public User loginUser(User user) {
+        return userDao.findUserByUsernameAndPassword(user.getUsername(),user.getPassword());
     }
 
 

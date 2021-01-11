@@ -18,9 +18,9 @@
     <!-- Bootstrap core CSS -->
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!--external css-->
-    <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap-datepicker/css/datepicker.css" />
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap-daterangepicker/daterangepicker.css" />
+    <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap-datepicker/css/datepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap-daterangepicker/daterangepicker.css"/>
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet">
@@ -64,18 +64,20 @@
         <div id="sidebar" class="nav-collapse ">
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
-                <li class="mt">
-                    <a class="active" href="/findAllMessageServlet">
-                        <i class="fa fa-dashboard"></i>
-                        <span>留言管理</span>
-                    </a>
-                </li>
-                <li class="sub-menu">
-                    <a href="/findAllUserServlet">
-                        <i class="fa fa-desktop"></i>
-                        <span>用户管理</span>
-                    </a>
-                </li>
+                <c:if test="${user.status == 1}">
+                    <li class="mt">
+                        <a class="active" href="/findAllMessageServlet">
+                            <i class="fa fa-dashboard"></i>
+                            <span>留言管理</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="/findAllUserServlet">
+                            <i class="fa fa-desktop"></i>
+                            <span>用户管理</span>
+                        </a>
+                    </li>
+                </c:if>
                 <li class="sub-menu">
                     <a href="/findAllMyMessageByIdServlet">
                         <i class="fa fa-desktop"></i>
@@ -100,13 +102,15 @@
                     <h4 class="title">Contact Form</h4>
                     <div id="message"></div>
                     <form class="contact-form php-mail-form" action="/updateMessageById" method="POST">
-                       <input hidden name="id" value="${message.mid}">
+                        <input hidden name="id" value="${message.mid}">
                         <div class="form-group">
-                            主题： <input disabled value="${message.title}" disabled type="text" name="title" class="form-control"  placeholder="标题" data-rule="minlen:4">
+                            主题： <input disabled value="${message.title}" disabled type="text" name="title"
+                                       class="form-control" placeholder="标题" data-rule="minlen:4">
                             <div class="validate"></div>
                         </div>
                         <div class="form-group">
-                            内容：<input value="${message.content}" type="text" name="content" class="form-control" placeholder="内容" >
+                            内容：<input value="${message.content}" type="text" name="content" class="form-control"
+                                      placeholder="内容">
                             <div class="validate"></div>
                         </div>
 
@@ -117,10 +121,10 @@
                     </form>
                 </div>
 
-            <!-- /row -->
+                <!-- /row -->
 
 
-            <!-- /row -->
+                <!-- /row -->
         </section>
         <!-- /wrapper -->
     </section>

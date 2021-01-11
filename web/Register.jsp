@@ -47,32 +47,24 @@
         </div>
         <label class="text-info" for="hobby">爱好：</label>
         <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox1" value="hobby1"> 跑步
+            <input type="checkbox" id="inlineCheckbox1" name="hobby"value="hobby1"> 跑步
         </label>
         <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox2" value="hobby2"> 阅读
+            <input type="checkbox" id="inlineCheckbox2"name="hobby" value="hobby2"> 阅读
         </label>
         <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox3" value="hobby3"> 购物
+            <input type="checkbox" id="inlineCheckbox3"name="hobby" value="hobby3"> 购物
         </label>
+        <br>
         <div class="form-group">
-            <label class="text-info" for="qq">QQ：</label>
-            <input type="text" class="form-control" name="qq" placeholder="请输入QQ号码"/>
+            <label class="text-info" for="introduction">个人介绍：</label>
+             <input type="text" class="form-control" name="introduce" placeholder="introduction input">
         </div>
 
-        <div class="form-group has-success has-feedback">
-            <label class="control-label text-info" for="inputGroupSuccess3">Email：</label>
-            <div class="input-group">
-                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                <input type="text" class="form-control" name="email" id="inputGroupSuccess3" aria-describedby="Email：">
-            </div>
-            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-            <span id="inputGroupSuccess3Status" class="sr-only">(success)</span>
-        </div>
         <div class="form-group" style="text-align: center">
             <input class="btn btn-primary" type="submit" value="提交" />
             <input class="btn btn-default" type="reset" value="重置" />
-            <input class="btn btn-default" type="button" value="返回" />
+            <input class="btn btn-default" type="button" value="返回"  src="Login.html"/>
         </div>
     </form>
 </div>

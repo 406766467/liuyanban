@@ -64,18 +64,20 @@
         <div id="sidebar" class="nav-collapse ">
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
-                <li class="mt">
-                    <a class="active" href="/findAllMessageServlet">
-                        <i class="fa fa-dashboard"></i>
-                        <span>留言管理</span>
-                    </a>
-                </li>
-                <li class="sub-menu">
-                    <a href="/findAllUserServlet">
-                        <i class="fa fa-desktop"></i>
-                        <span>用户管理</span>
-                    </a>
-                </li>
+                <c:if test="${user.status == 1}">
+                    <li class="mt">
+                        <a class="active" href="/findAllMessageServlet">
+                            <i class="fa fa-dashboard"></i>
+                            <span>留言管理</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="/findAllUserServlet">
+                            <i class="fa fa-desktop"></i>
+                            <span>用户管理</span>
+                        </a>
+                    </li>
+                </c:if>
                 <li class="sub-menu">
                     <a href="/findAllMyMessageByIdServlet">
                         <i class="fa fa-desktop"></i>
@@ -176,9 +178,9 @@
 
 </html>
 <script>
-    function update(val){
+    function update(val) {
         let content = $("#newTextarea").val();
-        alert("/updateMessageById?id="+val+"&content="+content)
+        alert("/updateMessageById?id=" + val + "&content=" + content)
         //window.location.href="/updateMessageById?id="+val+"&content="+content
     }
 
