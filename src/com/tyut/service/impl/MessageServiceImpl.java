@@ -33,4 +33,9 @@ public class MessageServiceImpl implements MessageService {
     public int updateMessageById(Integer id, String content) {
         return userDao.updateMessageById(id,content);
     }
+
+    @Override
+    public int addMessage(Message message) {
+        return userDao.addMessage(message);
+    }
 }

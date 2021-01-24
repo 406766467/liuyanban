@@ -26,6 +26,6 @@ public class FindAllMyMessageByIdServlet extends HttpServlet {
         MessageService messageService = new MessageServiceImpl();
         List<Message> allMyMessageByIdServlet = messageService.findAllMyMessageByIdServlet(user.getUid());
         req.setAttribute("messages",allMyMessageByIdServlet);
-        req.getRequestDispatcher("/basic_table1.jsp").forward(req,resp);
+        req.getRequestDispatcher("/basic_table3.jsp").forward(req,resp);
     }
 }

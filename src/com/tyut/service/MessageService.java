@@ -10,4 +10,5 @@ public interface MessageService {
     int deleteMessageById(Integer id);
     Message findMessageById(Integer id);
     int updateMessageById(Integer id,String content);
+    int addMessage(Message message);
 }

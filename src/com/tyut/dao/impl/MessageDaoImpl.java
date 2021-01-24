@@ -45,4 +45,11 @@ public class MessageDaoImpl implements MessageDao {
         int update = template.update(sql);
         return update;
     }
+
+    @Override
+    public int addMessage(Message message) {
+        String sql = "insert into message values(?,?,?,?,?)";
+        int update = template.update(sql, null, message.getTitle(), message.getContent(), message.getUid(), message.getUrl());
+        return update;
+    }
 }

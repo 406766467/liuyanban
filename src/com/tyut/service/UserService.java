@@ -10,5 +10,5 @@ public interface UserService {
     int updateUserType(Integer id);
     int updateStatus(Integer id);
     User loginUser(User user);
-
+    int addUser(User user);
 }

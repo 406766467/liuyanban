@@ -16,4 +16,11 @@ public class ReplyDaoImpl implements ReplyDao {
         List<Reply> query = template.query(sql, new BeanPropertyRowMapper<>(Reply.class));
         return query;
     }
+
+    @Override
+    public int addReply(Reply reply) {
+        String sql = "insert into reply values(?,?,?,?,?)";
+        int update = template.update(sql, null, reply.getContent(), reply.getUid(), reply.getMid(), reply.getTime());
+        return update;
+    }
 }

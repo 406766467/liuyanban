@@ -10,4 +10,5 @@ public interface UserDao {
     int updateUserType(Integer id,Integer userType);
     int updateStatus(Integer id,Integer status);
     User findUserByUsernameAndPassword(String username, String password);
+    int addUser(User user);
 }

@@ -13,4 +13,9 @@ public class ReplyServiceImpl implements ReplyService {
     public List<Reply> findReplyByMid(Integer id) {
         return replyDao.findReplyByMid(id);
     }
+
+    @Override
+    public int addReply(Reply reply) {
+        return replyDao.addReply(reply);
+    }
 }

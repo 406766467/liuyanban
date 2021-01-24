@@ -20,12 +20,15 @@
 <body>
 <div class="container">
     <center><h3 class="text-info">注册页面</h3></center>
-    <form action="" method="post" style="">
+    <form action="/registerServlet"  style="">
         <div class="form-group">
-            <label  class="text-info"for="name">姓名：</label>
-            <input  type="text" class="form-control " id="name" name="name" placeholder="请输入姓名" size="100px">
+            <label  class="text-info" for="username">用户名：</label>
+            <input  type="text" class="form-control " id="username" name="username" placeholder="请输入用户名" size="100px">
         </div>
-
+        <div class="form-group">
+            <label  class="text-info" for="password">密码：</label>
+            <input  type="password" class="form-control " id="password" name="password" placeholder="请输入密码" size="100px">
+        </div>
         <div class="form-group">
             <label  class="text-info" for="sex">性别：</label>
             <input type="radio" name="sex" value="男" checked="checked"/>男
@@ -47,24 +50,25 @@
         </div>
         <label class="text-info" for="hobby">爱好：</label>
         <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox1" name="hobby"value="hobby1"> 跑步
+            <input type="checkbox" id="inlineCheckbox1" name="hobby" value="跑步"> 跑步
         </label>
         <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox2"name="hobby" value="hobby2"> 阅读
+            <input type="checkbox" id="inlineCheckbox2" name="hobby" value="阅读"> 阅读
         </label>
         <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox3"name="hobby" value="hobby3"> 购物
+            <input type="checkbox" id="inlineCheckbox3" name="hobby" value="购物"> 购物
         </label>
         <br>
         <div class="form-group">
             <label class="text-info" for="introduction">个人介绍：</label>
-             <input type="text" class="form-control" name="introduce" placeholder="introduction input">
+             <textarea   class="form-control" name="introduce" placeholder="introduction input"></textarea>
         </div>
 
         <div class="form-group" style="text-align: center">
             <input class="btn btn-primary" type="submit" value="提交" />
             <input class="btn btn-default" type="reset" value="重置" />
-            <input class="btn btn-default" type="button" value="返回"  src="Login.html"/>
+            <input class="btn btn-default" type="button" value="返回" onclick="window.open('/Login.jsp')"/>
+            <span style="color: red">${login_msg}</span>
         </div>
     </form>
 </div>
